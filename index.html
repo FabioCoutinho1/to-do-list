@@ -1,118 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/style/style.css">
     <title>To Do List</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <header>
-        <h1>To Do List</h1>
-      </header>
-      <section class="add">
-        <form id="todo-form">
-          <label for="todo"><p>Adicione sua tarefa:</p></label>
-          <div class="form-control">
-            <input
-              type="text"
-              id="todo"
-              name="todo"
-              placeholder="O que você quer fazer"
-            />
+        <header>
+            <h1>To Do List</h1>
+        </header>
+        <section class="add-todo">
+            <p>Adicione sua tarefa:</p>
+            <form>
+                <input type="text" name="add-input" id="add-input" placeholder="Adicione sua tarefa">
+                <button type="submit">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                </button>
+            </form>
+        </section>
+
+        <section class="edit-todo">
+            <p>Edite sua tarefa:</p>
+            <form>
+                <input type="text" name="edit-form" id="edit-form">
+                <button type="submit">
+                    <span class="material-symbols-outlined">
+                        check
+                    </span>
+                </button>
+            </form>
             <button type="submit">
-              <span class="material-symbols-outlined"> add </span>
+                Cancelar
             </button>
-          </div>
-        </form>
-      </section>
+        </section>
 
-      <section class="edit-todo">
-        <form id="edit-form">
-          <label for="edit"><p>Edite sua tarefa:</p></label>
-          <div class="edit-control">
-            <input type="text" name="edit" id="edit"/>
-            <button type="submit">
-              <span class="material-symbols-outlined"> check_circle </span>
-            </button>
-          </div>
-          <button>cnecelar</button>
-        </form>
-      </section>
-
-      <section class="toolbar">
-        <div id="seaarch">
-          <h2>Pesquisar:</h2>
-          <form>
-            <input type="text" name="seaarch" id="seaarch-input" />
-            <button id="erase-button">
-              <span class="material-symbols-outlined"> backspace </span>
-            </button>
-          </form>
-        </div>
-        <div id="filter">
-          <h2>Filtrar:</h2>
-          <select name="filter" id="filter-id">
-            <option value="1">Todos</option>
-            <option value="2">Feitos</option>
-            <option value="3">A fazer</option>
-          </select>
-        </div>
-      </section>
-
-      <section class="todo-list">
-        <div class="todo-check">
-          <p>arrumar a casa</p>
-          <div class="btn-list">
-              <button>
-                <span class="material-symbols-outlined"> check </span>
-              </button>
-              <button>
-                <span class="material-symbols-outlined"> edit </span>
-              </button>
-              <button>
-                <span class="material-symbols-outlined"> delete </span>
-              </button>
-          </div>
-        </div>
-
-        <div class="todo-check feito">
-            <p>arrumar a casa</p>
-            <div class="btn-list">
-                <button>
-                  <span class="material-symbols-outlined"> check </span>
-                </button>
-                <button>
-                  <span class="material-symbols-outlined"> edit </span>
-                </button>
-                <button>
-                  <span class="material-symbols-outlined"> delete </span>
-                </button>
+        <section class="toolbar">
+            <div class="search">
+                <h2>Pesquisar</h2>
+                <form>
+                    <input type="text" name="search-input" id="search-input">
+                    <button type="submit">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
+                </form>
             </div>
-          </div>
 
-          <div class="todo-check">
-            <p>arrumar a casa</p>
-            <div class="btn-list">
-                <button>
-                  <span class="material-symbols-outlined"> check </span>
-                </button>
-                <button>
-                  <span class="material-symbols-outlined"> edit </span>
-                </button>
-                <button>
-                  <span class="material-symbols-outlined"> delete </span>
-                </button>
+            <div class="filter">
+                <h2>Filtrar</h2>
+                <select name="select-todo" id="select-todo">
+                    <option value="todos">Todos</option>
+                    <option value="feitos">Feitos</option>
+                    <option value="nao-feitos">A fazer</option>
+                </select>
             </div>
-          </div>
-      </section>
+        </section>
+
+        <section class="todo-list">
+
+            <div class="todo check">
+                <h3>Limpar a casa</h3>
+                <div class="todo-button">
+                    <button>
+                        <span class="material-symbols-outlined">
+                            check
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="todo">
+                <h3>Limpar a casa</h3>
+                <div class="todo-button">
+                    <button>
+                        <span class="material-symbols-outlined">
+                            check
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="todo">
+                <h3>Limpar a casa</h3>
+                <div class="todo-button">
+                    <button>
+                        <span class="material-symbols-outlined">
+                            check
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </button>
+                    <button>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </button>
+                </div>
+            </div>
+            
+        </section>
+
     </main>
-  </body>
+</body>
+
 </html>
