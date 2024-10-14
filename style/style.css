@@ -53,6 +53,10 @@ button:hover{
     color: white;
 }
 
+button span{
+    pointer-events: none;
+}
+
 .add-todo,
 .edit-todo,
 .toolbar,
@@ -126,14 +130,18 @@ button:hover{
 
 .todo-list .todo{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    transition: .5s;
     padding: 1rem;
 }
 
-.todo .todo-button{
-    display: flex;
-    gap: 1rem;
+.todo h3{
+    flex: 1;
+}
+
+.todo button{
+    margin-right: 1rem;
 }
 
 /* class ultilitarias */
@@ -145,4 +153,8 @@ button:hover{
 
 .check h3{
     text-decoration: line-through;
+}
+
+.hiden{
+    display: none;
 }
