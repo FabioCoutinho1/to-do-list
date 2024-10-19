@@ -7,6 +7,8 @@ const editInput = document.querySelector("#edit-input")
 const todoList = document.querySelector(".todo-list")
 const cancelBtn = document.querySelector("#cancel-btn")
 
+let oldInputValue
+
 // funçoes
 
 const saveTodo = (Text) =>{
@@ -52,6 +54,19 @@ const toggleForms = () =>{
     editInput.focus()
 }
 
+const updateTodo = (text) =>{
+    const todos = document.querySelectorAll(".todo")
+
+    todos.forEach((todo) =>{
+
+        let todoTitle = todo.querySelector("h3")
+
+        if(todoTitle.innerText === oldInputValue){
+            todoTitle.innerText = text
+        }
+    })
+}
+
 // eventos
 addForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -67,6 +82,11 @@ document.addEventListener("click", (e) =>{
 
         const targetEl = e.target
         const parentEl = targetEl.closest("div")
+        let todoTitle
+
+        if(parentEl && parentEl.querySelector("h3")){
+            todoTitle = parentEl.querySelector("h3").innerText
+        }
 
         if(targetEl.classList.contains("finish-btn")){
             parentEl.classList.toggle("check")
@@ -74,6 +94,9 @@ document.addEventListener("click", (e) =>{
 
         if(targetEl.classList.contains("edit-btn")){
             toggleForms()
+
+            editInput.value = todoTitle
+            oldInputValue = todoTitle
         }
 
         if(targetEl.classList.contains("delete-btn")){
@@ -83,6 +106,18 @@ document.addEventListener("click", (e) =>{
 
 cancelBtn.addEventListener("click", (e) =>{
     e.preventDefault()
+
+    toggleForms()
+})
+
+editForm.addEventListener("submit", (e) =>{
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if(editInputValue){
+        updateTodo(editInputValue)
+    }
 
     toggleForms()
 })
